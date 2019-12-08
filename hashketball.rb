@@ -251,6 +251,7 @@ def most_points_scored
         end
       end
     end
+    max_points_name
 end
 
 def winning_team
