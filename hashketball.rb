@@ -235,6 +235,34 @@ def big_shoe_rebounds
 end
 
 def most_points_scored
+  max_points = 0
+  max_points_name = ""
+  game_data = game_hash
+
+  game_data.each do |place, team|
+    team.each do |attribute, data|
+      if attribute == :players
+        data.each do |player|
+            if player[:points] > max_shoe
+              max_points = player[:poibts]
+              max_points_name = player[:player_name]
+            end
+          end
+        end
+      end
+    end
+
+  game_data.each do |place, team|
+    team.each do |attribute, data|
+      if attribute == :players
+        data.each do |player|
+          if player[:player_name] == max_shoe_name
+            return player[:rebounds]
+          end
+        end
+      end
+    end
+  end
 end
 
 def winning_team
