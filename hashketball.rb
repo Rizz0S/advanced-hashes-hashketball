@@ -276,6 +276,11 @@ def winning_team
   first_team_points = team_points_scored(team_names_arr[0])
   second_team_points = team_points_scored(team_names_arr[1])
 
+  if first_team_points > second_team_points
+    return team_names_arr[0]
+  end
+  return team_names_arr[1]
+
 end
 
 def player_with_longest_name
