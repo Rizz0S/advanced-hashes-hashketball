@@ -251,18 +251,6 @@ def most_points_scored
         end
       end
     end
-
-  game_data.each do |place, team|
-    team.each do |attribute, data|
-      if attribute == :players
-        data.each do |player|
-          if player[:player_name] == max_shoe_name
-            return player[:rebounds]
-          end
-        end
-      end
-    end
-  end
 end
 
 def winning_team
