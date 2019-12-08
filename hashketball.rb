@@ -319,7 +319,7 @@ def most_steals(players_name)
         end
       end
     end
-    max_points_name
+    max_steals_name
 end
 
 def long_name_steals_a_ton
