@@ -233,3 +233,95 @@ def big_shoe_rebounds
     end
   end
 end
+
+def most_points_scored
+  max_points = 0
+  max_points_name = ""
+  game_data = game_hash
+
+  game_data.each do |place, team|
+    team.each do |attribute, data|
+      if attribute == :players
+        data.each do |player|
+            if player[:points] > max_points
+              max_points = player[:points]
+              max_points_name = player[:player_name]
+            end
+          end
+        end
+      end
+    end
+    max_points_name
+end
+
+def team_points_scored (teams_name)
+  game_data = game_hash
+  points = []
+  game_data.each do |place, team|
+    if team[:team_name] == teams_name
+      team.each do |attributes, data|
+        if attributes == :players
+          data.each do |player|
+            points << player[:points]
+          end
+        end
+      end
+    end
+  end
+  points.sum
+end
+
+def winning_team
+  team_names_arr = team_names
+  first_team_points = team_points_scored(team_names_arr[0])
+  second_team_points = team_points_scored(team_names_arr[1])
+
+  if first_team_points > second_team_points
+    return team_names_arr[0]
+  end
+  team_names_arr[1]
+end
+
+def player_with_longest_name
+  max_name_length = 0
+  max_name = ""
+  game_data = game_hash
+
+  game_data.each do |place, team|
+    team.each do |attribute, data|
+      if attribute == :players
+        data.each do |player|
+            if player[:player_name].length > max_name_length
+              max_name = player[:player_name]
+              max_name_length = max_name.length
+            end
+          end
+        end
+      end
+    end
+    max_name
+end
+
+def most_steals
+  max_steals = 0
+  max_steals_name = ""
+  game_data = game_hash
+
+  game_data.each do |place, team|
+    team.each do |attribute, data|
+      if attribute == :players
+        data.each do |player|
+            if player[:steals] > max_steals
+              max_steals = player[:steals]
+              max_steals_name = player[:player_name]
+            end
+          end
+        end
+      end
+    end
+    max_steals_name
+end
+
+def long_name_steals_a_ton?
+  player_with_longest_name == most_steals
+end
