@@ -262,7 +262,7 @@ def team_points_scored (teams_name)
       team.each do |attributes, data|
         if attributes == :players
           data.each do |player|
-            nums << player[:points]
+            points << player[:points]
           end
         end
       end
