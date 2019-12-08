@@ -254,28 +254,28 @@ def most_points_scored
     max_points_name
 end
 
-def winning_team
-  team1_points = 0
-  team2_points = 0
-  results = [
-    {},
-    {},
-  ]
+def team_points_scored (teams_name)
   game_data = game_hash
-
+  points = []
   game_data.each do |place, team|
-    team.each do |attribute, data|
-      if attribute == :players
-        data.each do |player|
-            if player[:points] > max_points
-              max_points = player[:points]
-              max_points_name = player[:player_name]
-            end
+    if team[:team_name] == teams_name
+      team.each do |attributes, data|
+        if attributes == :players
+          data.each do |player|
+            nums << player[:points]
           end
         end
       end
     end
-    max_points_name
+  end
+  points.sum
+end
+
+def winning_team
+  team_names_arr = team_names
+  team_points_scored(team_names_arr[0])
+  team_points_scored(team_names_arr[1])
+
 end
 
 def player_with_longest_name
