@@ -279,7 +279,7 @@ def winning_team
   if first_team_points > second_team_points
     return team_names_arr[0]
   end
-  return team_names_arr[1]
+  team_names_arr[1]
 end
 
 def player_with_longest_name
