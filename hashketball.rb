@@ -273,8 +273,8 @@ end
 
 def winning_team
   team_names_arr = team_names
-  team_points_scored(team_names_arr[0])
-  team_points_scored(team_names_arr[1])
+  first_team_points = team_points_scored(team_names_arr[0])
+  second_team_points = (team_names_arr[1])
 
 end
 
