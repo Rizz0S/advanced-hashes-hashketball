@@ -301,3 +301,12 @@ def player_with_longest_name
     end
     max_name
 end
+
+def most_steals(players_name)
+
+end
+
+def long_name_steals_a_ton
+  player_longest_name = player_with_longest_name
+  player_most_steals = 
+end
