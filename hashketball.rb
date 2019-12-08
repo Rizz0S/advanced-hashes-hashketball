@@ -326,5 +326,5 @@ def long_name_steals_a_ton
   player_longest_name = player_with_longest_name
   player_most_steals = most_steals
 
-  if player_longest_name == player_most_steals
+  player_longest_name == player_most_steals
 end
